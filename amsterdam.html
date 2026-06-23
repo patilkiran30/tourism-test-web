@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amsterdam, Netherlands - Wanderlust Travel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .destination-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1534351590666-13e3e96b5017?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 70px; /* offset for fixed navbar */
+        }
+        .destination-hero h1 {
+            font-size: 4rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: #fff;
+        }
+        .destination-details {
+            padding: 5rem 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 -20px 40px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 10;
+            border-radius: 20px 20px 0 0;
+            margin-top: -40px;
+        }
+        .destination-details h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+        }
+        .destination-details p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: #4a5568;
+        }
+        .booking-section {
+            background: #f8fafc;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 3rem;
+            border: 1px solid #e2e8f0;
+        }
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Wanderlust</div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="destination-hero animate-on-scroll">
+        <h1>Amsterdam, Netherlands</h1>
+    </section>
+
+    <section class="destination-details animate-on-scroll">
+        <h2>About Amsterdam, Netherlands</h2>
+        <p>Explore the charming streets and historic canals of Amsterdam. Rent a bicycle to navigate the city like a local, visit world-class museums such as the Van Gogh Museum and the Anne Frank House, and enjoy the lively atmosphere of the picturesque Jordaan neighborhood.</p>
+        
+        <div class="booking-section">
+            <h3>Ready for an adventure?</h3>
+            <div class="price">Starting at ,150</div>
+            <a href="contact.html" class="cta-button">Book This Trip</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Wanderlust Travel. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

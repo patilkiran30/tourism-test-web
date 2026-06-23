@@ -1,0 +1,125 @@
+import sys
+
+def create_destination_page(filename, title, image_url, description, price):
+    html_content = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title} - Wanderlust Travel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .destination-hero {{
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{image_url}') center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 70px; /* offset for fixed navbar */
+        }}
+        .destination-hero h1 {{
+            font-size: 4rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: #fff;
+        }}
+        .destination-details {{
+            padding: 5rem 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 -20px 40px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 10;
+            border-radius: 20px 20px 0 0;
+            margin-top: -40px;
+        }}
+        .destination-details h2 {{
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+        }}
+        .destination-details p {{
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: #4a5568;
+        }}
+        .booking-section {{
+            background: #f8fafc;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 3rem;
+            border: 1px solid #e2e8f0;
+        }}
+        .price {{
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 1.5rem;
+        }}
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Wanderlust</div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="destination-hero animate-on-scroll">
+        <h1>{title}</h1>
+    </section>
+
+    <section class="destination-details animate-on-scroll">
+        <h2>About {title}</h2>
+        <p>{description}</p>
+        
+        <div class="booking-section">
+            <h3>Ready for an adventure?</h3>
+            <div class="price">Starting at {price}</div>
+            <a href="contact.html" class="cta-button">Book This Trip</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Wanderlust Travel. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>"""
+    
+    with open(filename, 'w') as f:
+        f.write(html_content)
+    print(f"Created {filename}")
+
+if __name__ == "__main__":
+    if len(sys.argv) != 6:
+        print("Usage: python create_destination.py <filename> <title> <image_url> <description> <price>")
+        sys.exit(1)
+    
+    create_destination_page(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5])
